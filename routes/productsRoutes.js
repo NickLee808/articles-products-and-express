@@ -5,10 +5,15 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const productsStore = require('../db/products');
 
+router.get('/', (req, res) => {
+  res.send(productsStore.getAllProducts());
+  console.log('hi');
+});
+
 router.post('/', (req, res) => { 
   let clientPostObj = req.body;
   productsStore.createNewProduct(clientPostObj);
-  res.send('u r in teh routes');
+  res.redirect('/products');
 });
 
 module.exports = router;
