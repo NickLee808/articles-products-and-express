@@ -11,7 +11,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/products', productsRoutes);
 
 app.get('/', (req, res) => {
-  console.log('something');
   res.send('u r in teh root');
 });
 

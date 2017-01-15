@@ -13,4 +13,13 @@ describe('GET /', () => {
   });
 });
 
-describe('POST /')
+describe('POST /products', () => {
+  it('should create new product', (done) => {
+    request(app)
+      .post('/products')
+      .end(function(err, res) {
+        if (err) throw err;
+      })
+      .expect(302, done);
+  });
+});
