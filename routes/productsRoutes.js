@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => { 
   let clientPostObj = req.body;
   productsStore.createNewProduct(clientPostObj);
+  console.log('clientPostObj', clientPostObj);
   res.redirect('/products');
 });
 

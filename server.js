@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.send('u r in teh root');
 });
 
+/*app.post('/testRoute', (req, res) => {
+  res.send(req.body.name);
+});*/
+
 app.listen(3000, _ => {
   console.log('Listening on port 3000');
 });
