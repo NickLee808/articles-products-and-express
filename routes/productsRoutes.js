@@ -16,4 +16,8 @@ router.post('/', (req, res) => {
   res.redirect('/products');
 });
 
+router.put('/', (req, res) => {
+  res.redirect('/products/:id');
+});
+
 module.exports = router;

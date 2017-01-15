@@ -10,11 +10,11 @@ function createNewProduct(clientPostObj){
   console.log(arrayOfProducts);
 }
 
-function deleteProductById(){
+function deleteProductById(idNum){
 
 }
 
-function getProductById(){
+function getProductById(idNum){
   
 }
 

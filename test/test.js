@@ -1,7 +1,12 @@
 // jshint esversion:6
 
-let assert = require('assert');
+let assert = require('chai').assert;
+let request = require('supertest');
+let express = require('express');
 
-describe('Array', function() {
-  
+describe('GET /', () => {
+  it('should have a response', () => {
+    
+    assert.typeOf(a.name, 'string');
+  });
 });
