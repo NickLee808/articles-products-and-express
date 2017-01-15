@@ -11,9 +11,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/products', productsRoutes);
 
 app.get('/', (req, res) => {
+  console.log('something');
   res.send('u r in teh root');
 });
 
 app.listen(3000, _ => {
   console.log('Listening on port 3000');
 });
+
+module.exports = app;
