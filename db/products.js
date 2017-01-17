@@ -7,15 +7,24 @@ function createNewProduct(clientPostObj){
   clientPostObj.id = `${newIdNum}`;
   arrayOfProducts.push(clientPostObj);
   newIdNum++;
-  console.log(arrayOfProducts);
 }
 
-function deleteProductById(idNum){
-
+function getProductById(id){
+  for (i = 0; i < arrayOfProducts.length; i++){
+    if(arrayOfProducts[i].id === id){
+      return arrayOfProducts[i];
+    }
+  }
 }
 
-function getProductById(idNum){
+function updateProductById(reqBody){
+  let id = reqBody.id;
+  let productToUpdate = getProductById(id);
   
+}
+
+function deleteProductById(id){
+
 }
 
 function getAllProducts(){
@@ -26,5 +35,6 @@ module.exports = {
   createNewProduct,
   deleteProductById,
   getProductById,
-  getAllProducts
+  getAllProducts,
+  updateProductById,
 };

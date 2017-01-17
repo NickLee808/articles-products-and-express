@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
   res.send(req.body.name);
 });*/
 
-app.listen(3000, _ => {
+app.listen(3000, () => {
   console.log('Listening on port 3000');
 });
 

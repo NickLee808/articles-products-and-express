@@ -13,12 +13,11 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => { 
   let clientPostObj = req.body;
   productsStore.createNewProduct(clientPostObj);
-  console.log('clientPostObj', clientPostObj);
   res.redirect('/products');
 });
 
-router.put('/', (req, res) => {
-  res.redirect('/products/:id');
+router.put('/:id', (req, res) => {
+  productsStore.updateProductById(req.body);
 });
 
 module.exports = router;

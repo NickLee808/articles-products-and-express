@@ -23,13 +23,9 @@ describe('POST /products', () => {
         price: 'priceTest',
         inventory: 'inventoryTest'
       })
-      .end(function(err, res) {
-        if (err) throw err;
-        done();
-      });
+      .expect({}, done);
   });
 });
-
 
 /*describe('POST /testRoute', () => {
   it('.post should work with data', (done) => {
