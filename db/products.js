@@ -27,8 +27,12 @@ function updateProductById(reqBody){
     productToUpdate.inventory = reqBody.inventory;}
 }
 
-function deleteProductById(id){
-
+function deleteProductById(reqBody){
+  let productToDelete = getProductById(reqBody.id);
+  let index = arrayOfProducts.indexOf(productToDelete);
+  if (index > -1) {
+    arrayOfProducts.splice(index, 1);
+  }
 }
 
 function getAllProducts(){

@@ -18,6 +18,12 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   productsStore.updateProductById(req.body);
+  res.redirect('/products');
+});
+
+router.delete('/:id', (req, res) => {
+  productsStore.deleteProductById(req.body);
+  res.redirect('/products');
 });
 
 module.exports = router;
