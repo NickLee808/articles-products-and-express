@@ -18,9 +18,13 @@ function getProductById(id){
 }
 
 function updateProductById(reqBody){
-  let id = reqBody.id;
-  let productToUpdate = getProductById(id);
-  
+  let productToUpdate = getProductById(reqBody.id);
+  if (reqBody.name !== undefined){
+    productToUpdate.name = reqBody.name;}
+  if (reqBody.price !== undefined){
+    productToUpdate.price = reqBody.price;}
+  if (reqBody.inventory !== undefined){
+    productToUpdate.inventory = reqBody.inventory;}
 }
 
 function deleteProductById(id){
