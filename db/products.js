@@ -30,9 +30,11 @@ function updateProductById(reqBody){
 function deleteProductById(reqBody){
   let productToDelete = getProductById(reqBody.id);
   let index = arrayOfProducts.indexOf(productToDelete);
+  console.log(arrayOfProducts);
   if (index > -1) {
     arrayOfProducts.splice(index, 1);
   }
+  console.log(arrayOfProducts);
 }
 
 function getAllProducts(){

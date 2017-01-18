@@ -1,4 +1,4 @@
-// jshint esversion:6
+//jshint esversion:6
 
 const products = require ('./db/products');
 const express = require('express');
