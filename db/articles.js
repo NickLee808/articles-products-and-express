@@ -1,9 +1,23 @@
 //jshint esversion:6
 
 module.exports = (function(){
-  // ... functions declared and private variables?!
-  // ...
-  //...
+  
+  function _all(){
+
+  }
+
+  function _add(){
+
+  }
+
+  function _getByTitle(){
+
+  }
+
+  function _editByTitle(){
+
+  }
+
   return {
     all: _all,
     add: _add,
