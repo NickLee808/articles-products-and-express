@@ -26,5 +26,9 @@ router.delete('/:id', (req, res) => {
   res.redirect('/products');
 });
 
+router.post('/articles', (req, res) => {
+  let clientPostObj = req.body;
+  console.log(clientPostObj);
+});
 
-module.exports = router;
+module.exports = router;                 

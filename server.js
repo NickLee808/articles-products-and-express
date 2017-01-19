@@ -5,10 +5,13 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const productsRoutes = require('./routes/productsRoutes');
+const articlesRoutes = require('./routes/articlesRoutes');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/products', productsRoutes);
+
+app.use('/articles', articlesRoutes);
 
 app.get('/', (req, res) => {
   res.send('u r in teh root');
