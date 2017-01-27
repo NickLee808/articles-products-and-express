@@ -1,6 +1,18 @@
 //jshint esversion:6
 
-const products = require ('./db/products');
+const cn = {
+    host: 'localhost',
+    port: 5433,
+    database: 'my-database-name',
+    user: 'user-name',
+    password: 'user-password'
+};
+
+const db = pgp(cn);
+
+module.exports = db;
+
+/*const products = require ('./db/products');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -17,12 +29,8 @@ app.get('/', (req, res) => {
   res.send('u r in teh root');
 });
 
-/*app.post('/testRoute', (req, res) => {
-  res.send(req.body.name);
-});*/
-
 app.listen(3000, () => {
   console.log('Listening on port 3000');
 });
 
-module.exports = app;
+module.exports = app;*/
