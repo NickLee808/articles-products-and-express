@@ -1,32 +1,44 @@
 //jshint esversion:6
 
-let arrayOfProducts = [];
-let newIdNum = 0;
+const pgp = require('pg-promise')();
+const PG_PASS = process.env.PG_PASS;
+const db = pgp({
+  host: 'localhost',
+  port: 5432,
+  database: 'articles_products_express',
+  user: 'articles_products_user',
+  password: PG_PASS
+});
 
-function createNewProduct(){
-  
-}
+module.exports = (function(){
 
-function getProductById(){
+  function createNewProduct(clientPostObj){
+    return db.none('INSERT INTO products (name, price, inventory)',
+      [clientPostObj.name, clientPostObj.price, clientPostObj.inventory]);
+  }
 
-}
+  function deleteProductById(){
+    return db.none();
+  }
 
-function updateProductById(){
+  function getProductById(){
+    return db.one();
+  }
 
-}
+  function getAllProducts(){
+    return db.any('SELECT * FROM products');
+  }
 
-function deleteProductById(){
+  function updateProductById(){
+    return db.none();
+  }
 
-}
+  return {
+    createNewProduct,
+    deleteProductById,
+    getProductById,
+    getAllProducts,
+    updateProductById,
+  };
 
-function getAllProducts(){
-
-}
-
-module.exports = {
-  createNewProduct,
-  deleteProductById,
-  getProductById,
-  getAllProducts,
-  updateProductById,
-};
+})();

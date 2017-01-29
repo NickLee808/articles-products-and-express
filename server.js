@@ -1,6 +1,6 @@
 //jshint esversion:6
 
-const cn = {
+/*const cn = {
     host: 'localhost',
     port: 5433,
     database: 'my-database-name',
@@ -11,11 +11,13 @@ const cn = {
 const db = pgp(cn);
 
 module.exports = db;
+*/
 
-/*const products = require ('./db/products');
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
+const products = require ('./db/products');
+const app = express();
+const PORT = process.env.PORT || 3000;
 const productsRoutes = require('./routes/productsRoutes');
 const articlesRoutes = require('./routes/articlesRoutes');
 
@@ -29,8 +31,10 @@ app.get('/', (req, res) => {
   res.send('u r in teh root');
 });
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
-});
+if(!module.parent){
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
+}
 
-module.exports = app;*/
+module.exports = app;
