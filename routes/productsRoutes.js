@@ -15,8 +15,11 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => { 
   let clientPostObj = req.body;
-  productsModel.createNewProduct(clientPostObj);
-  res.redirect('/products');
+  productsModel.createNewProduct(clientPostObj)
+    .then(products => {
+      console.log(products);
+      res.redirect('/products');
+    });
 });
 
 router.put('/:id', (req, res) => {
