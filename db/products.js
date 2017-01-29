@@ -13,7 +13,7 @@ const db = pgp({
 module.exports = (function(){
 
   function createNewProduct(clientPostObj){
-    return db.none(`INSERT INTO products (name, price, inventory) VALUES (${clientPostObj.name}, ${clientPostObj.price}, ${clientPostObj.inventory}`);
+    return db.none(`INSERT INTO products (name, price, inventory) VALUES ('${clientPostObj.name}', ${clientPostObj.price}, ${clientPostObj.inventory})`);
   }
 
   function deleteProductById(){
