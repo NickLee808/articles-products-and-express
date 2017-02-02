@@ -13,6 +13,11 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+  let clientPostObj = req.body;
+  productsModel.getProductById(clientPostObj);
+});
+
 router.post('/', (req, res) => { 
   let clientPostObj = req.body;
   productsModel.createNewProduct(clientPostObj)
