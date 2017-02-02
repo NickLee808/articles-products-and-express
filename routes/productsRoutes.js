@@ -14,8 +14,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  let clientPostObj = req.body;
-  productsModel.getProductById(clientPostObj);
+  productsModel.getProductById(req.params.id)
+    .then(products => {
+      console.log(products);
+    });
 });
 
 router.post('/', (req, res) => { 
@@ -33,8 +35,10 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  productsModel.deleteProductById(req.body);
-  res.redirect('/products');
+  productsModel.deleteProductById(req.params.id)
+    .then(products => {
+      console.log(products);
+    });
 });
 
 module.exports = router;

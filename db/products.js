@@ -16,13 +16,12 @@ module.exports = (function(){
     return db.none(`INSERT INTO products (name, price, inventory) VALUES ('${clientPostObj.name}', ${clientPostObj.price}, ${clientPostObj.inventory})`);
   }
 
-  function deleteProductById(clientPostObj){
-    return db.none(`DELETE FROM products WHERE id =${clientPostObj.id}`);
+  function deleteProductById(id){
+    return db.none(`DELETE FROM products WHERE id =${id}`);
   }
 
-  function getProductById(clientPostObj){
-    console.log(clientPostObj);
-    return db.one(`SELECT * FROM products WHERE id=${clientPostObj.id}`);
+  function getProductById(id){
+    return db.one(`SELECT * FROM products WHERE id=${id}`);
   }
 
   function getAllProducts(){
