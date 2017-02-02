@@ -30,14 +30,14 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  productsModel.updateProductById(req.body);
+  productsModel.updateProductById(req.params.id);
   res.redirect('/products');
 });
 
 router.delete('/:id', (req, res) => {
   productsModel.deleteProductById(req.params.id)
     .then(products => {
-      console.log(products);
+      console.log('products', products);
     });
 });
 
